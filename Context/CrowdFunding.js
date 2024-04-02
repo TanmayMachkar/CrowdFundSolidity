@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 import { CrowdFundingAddress, CrowdFundingABI } from './constants';
 
 const fetchContract = (signerOrProvider) => {
-	new ethers.Contract(CrowdFundingAddress, CrowdFundingABI, signerOrProvider);
+	return new ethers.Contract(CrowdFundingAddress, CrowdFundingABI, signerOrProvider);
 }
 
 export const CrowdFundingContext = React.createContext();
