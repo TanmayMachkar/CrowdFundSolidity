@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\ADMIN\\CrowdFundSolidity\\contracts\\CrowdFunding.sol": {
-      "lastModificationDate": 1712057120417,
-      "contentHash": "1a308404a1f49aee59eff7571dc54e60",
+      "lastModificationDate": 1712241352605,
+      "contentHash": "aa374665b914eb75d42f4183f3135c71",
       "sourceName": "contracts/CrowdFunding.sol",
       "solcConfig": {
         "version": "0.8.18",

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
+import { CrowdFundingContext } from '../Context/CrowdFunding';
 import ICON from './ICON';
 import Arrow from './Arrow';
 
 const Hero = () => {
+  const { createCampaign } = useContext(CrowdFundingContext);
   const [campaign, setCampaign] = useState({
     title: '',
     description: '',
@@ -37,8 +39,8 @@ const Hero = () => {
           </svg>
           <div className = 'relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
             <div className = 'flex flex-col items-center justify-between xl:flex-row'>
-              <div className = 'w-full ma-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12'>
-                <h2 className = 'maw-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none'>
+              <div className = 'w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12'>
+                <h2 className = 'max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-5xl sm:leading-none'>
                   Crypto Share <br className = 'hidden md:block'/>
                   Crowd Funding CS
                 </h2>

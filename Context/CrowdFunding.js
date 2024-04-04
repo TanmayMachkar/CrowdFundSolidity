@@ -30,7 +30,7 @@ export const CrowdFundingProvider = ({ children }) => {
 				currentAccount,
 				title,
 				description,
-				ethers.util.parseUnits(amount, 18),      //convert target value to be in ethers, 18 denoted upto 18th decimal point
+				ethers.utils.parseUnits(amount, 18),      //convert target value to be in ethers, 18 denoted upto 18th decimal point
 				new Date(deadline).getTime()
 			);
 
@@ -41,7 +41,7 @@ export const CrowdFundingProvider = ({ children }) => {
 		}
 	}
 
-	const getCampaign = async() => {
+	const getCampaigns = async() => {
 		const provider = new ethers.providers.JsonRpcProvider();
 		const contract = fetchContract(provider);
 
@@ -73,7 +73,7 @@ export const CrowdFundingProvider = ({ children }) => {
 
 		const filteredCampaigns = allCampaigns.filter(
 			(campaign) =>
-				campaign.owner = '0xf39Fd6e51aad88F64ce6aB8827279cffFb92266'
+				campaign.owner === '0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199'
 		)
 
 		const userData = filteredCampaigns.map((campaign, i) => ({
@@ -130,8 +130,10 @@ export const CrowdFundingProvider = ({ children }) => {
 	const checkIfWalletConnected = async() => {
 		try {
 			if(!window.ethereum)
-				return setOpenError(true), setError("Install Metamask");
-
+			{	setOpenError(true) 
+				setError("Install Metamask");
+				return
+			}
 			const accounts = await window.ethereum.request({
 				method: "eth_accounts"
 			})
@@ -170,7 +172,7 @@ export const CrowdFundingProvider = ({ children }) => {
 				titleData,
 				currentAccount,
 				createCampaign,
-				getCampaign,
+				getCampaigns,
 				getUserCampaigns,
 				donate,
 				getDonations,

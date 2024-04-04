@@ -3,13 +3,13 @@ import { CrowdFundingContext } from '../Context/CrowdFunding';
 import { Hero, Card, PopUp } from '../Components';
 
 const index = () => {
-  const { titleData, getCampaign, createCampaign, donate, getUserCampaigns, getDonations } = useContext(CrowdFundingContext);
+  const { titleData, getCampaigns, createCampaign, donate, getUserCampaigns, getDonations } = useContext(CrowdFundingContext);
 
   const [allCampaign, setAllCampaign] = useState();
   const [userCampaign, setUserCampaign] = useState();
 
   useEffect(() => {
-    const getCampaignsData = getCampaign();
+    const getCampaignsData = getCampaigns();
     const userCampaignsData = getUserCampaigns();
     return async() => {
       const allData = await getCampaignsData;
@@ -27,7 +27,7 @@ const index = () => {
   return(
     <div>
       <Hero titleData = {titleData} createCampaign = {createCampaign}/>
-      <Card 
+      <Card
         title = 'All Listed Campaign'
         allCampaign = {allCampaign}
         setOpenModel = {setOpenModel}
@@ -39,7 +39,6 @@ const index = () => {
         setOpenModel = {setOpenModel}
         setDonate = {setDonateCampaign} //checking how many users have donated + it's details 
       />
-
       {openModel && (
         <PopUp
           setOpenModel = {setOpenModel}
