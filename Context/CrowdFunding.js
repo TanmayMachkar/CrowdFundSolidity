@@ -42,7 +42,7 @@ export const CrowdFundingProvider = ({ children }) => {
 	}
 
 	const getCampaigns = async() => {
-		const provider = new ethers.providers.JsonRpcProvider();
+		const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
 		const contract = fetchContract(provider);
 
 		const campaigns = await contract.getCampaigns();
@@ -61,7 +61,7 @@ export const CrowdFundingProvider = ({ children }) => {
 	}
 
 	const getUserCampaigns = async() => {	//will return all campaigns created by a single user
-		const provider = new ethers.providers.JsonRpcProvider();
+		const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
 		const contract = fetchContract(provider);
 
 		const allCampaigns = await contract.getCampaigns();
@@ -108,7 +108,7 @@ export const CrowdFundingProvider = ({ children }) => {
 	}
 
 	const getDonations = async(pId) => {
-		const provider = new ethers.providers.JsonRpcProvider();
+		const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
 		const contract = fetchContract(provider);
 
 		const donations = await contract.getDonators(pId);
