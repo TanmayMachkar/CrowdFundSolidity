@@ -27,6 +27,7 @@ const index = () => {
   return(
     <div>
       <Hero titleData = {titleData} createCampaign = {createCampaign}/>
+      <div  className = 'overflow-y-scroll'>
       <Card
         title = 'All Listed Campaign'
         allCampaign = {allCampaign}
@@ -39,6 +40,7 @@ const index = () => {
         setOpenModel = {setOpenModel}
         setDonate = {setDonateCampaign} //checking how many users have donated + it's details 
       />
+      </div>
       {openModel && (
         <PopUp
           setOpenModel = {setOpenModel}
