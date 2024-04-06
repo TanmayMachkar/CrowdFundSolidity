@@ -57,7 +57,6 @@ export const CrowdFundingProvider = ({ children }) => {
 			pId: i
 		}));
 
-		console.log(parsedCampaigns)
 		return parsedCampaigns;
 	}
 
@@ -74,7 +73,7 @@ export const CrowdFundingProvider = ({ children }) => {
 
 		const filteredCampaigns = allCampaigns.filter(
 			(campaign) =>
-				campaign.owner === '0x71bE63f3384f5fb98995898A86B02Fb2426c5788'
+				campaign.owner === '0x8805973978a51a93D1Ad99721573c00eC7FF9B67'
 		)
 
 		console.log(currentUser)
