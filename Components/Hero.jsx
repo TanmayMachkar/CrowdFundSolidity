@@ -16,6 +16,7 @@ const Hero = () => {
   const createNewCampaign = async(e) => {
     e.preventDefault();
     try{
+      console.log(campaign)
       const data = await createCampaign(campaign);
     } catch(error){
       console.log(error);
