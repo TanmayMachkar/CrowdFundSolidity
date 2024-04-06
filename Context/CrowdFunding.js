@@ -73,7 +73,7 @@ export const CrowdFundingProvider = ({ children }) => {
 
 		const filteredCampaigns = allCampaigns.filter(
 			(campaign) =>
-				campaign.owner === '0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199'
+				campaign.owner === currentUser
 		)
 
 		const userData = filteredCampaigns.map((campaign, i) => ({
