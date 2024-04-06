@@ -9,16 +9,15 @@ const index = () => {
   const [userCampaign, setUserCampaign] = useState();
 
   useEffect(() => {
-    const getCampaignsData = getCampaigns();
-    const userCampaignsData = getUserCampaigns();
-    return async() => {
-      const allData = await getCampaignsData;
-      console.log(allData);
-      const userData = await userCampaignsData;
-      setAllCampaign(allData);
-      setUserCampaign(userData);
-    }
-  }, [])
+    const fetchData = async () => {
+        const allData = await getCampaigns();
+        console.log(allData);
+        const userData = await getUserCampaigns();
+        setAllCampaign(allData);
+        setUserCampaign(userData);
+    };
+    fetchData();
+  }, []);
 
   //donate popup model
   const [openModel, setOpenModel] = useState(false);
