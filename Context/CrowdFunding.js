@@ -67,7 +67,7 @@ export const CrowdFundingProvider = ({ children }) => {
 		const allCampaigns = await contract.getCampaigns();
 
 		const accounts = await window.ethereum.request({
-			method: "eth_accounts", //request acc of user
+			method: "eth_requestAccounts", //request acc of user
 		})
 		const currentUser = accounts[0];
 
@@ -75,6 +75,8 @@ export const CrowdFundingProvider = ({ children }) => {
 			(campaign) =>
 				campaign.owner === currentUser
 		)
+
+		console.log(currentUser)
 
 		const userData = filteredCampaigns.map((campaign, i) => ({
 			owner: campaign.owner,
