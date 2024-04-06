@@ -13,6 +13,7 @@ const index = () => {
     const userCampaignsData = getUserCampaigns();
     return async() => {
       const allData = await getCampaignsData;
+      console.log(allData);
       const userData = await userCampaignsData;
       setAllCampaign(allData);
       setUserCampaign(userData);
