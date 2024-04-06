@@ -57,6 +57,7 @@ export const CrowdFundingProvider = ({ children }) => {
 			pId: i
 		}));
 
+		console.log(parsedCampaigns)
 		return parsedCampaigns;
 	}
 
