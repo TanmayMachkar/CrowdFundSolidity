@@ -110,7 +110,7 @@ export const CrowdFundingProvider = ({ children }) => {
 	}
 
 	const getDonations = async(pId) => {
-		const provider = new ethers.providers.JsonRpcProvider("https://polygon-testnet.public.blastapi.io");
+		const provider = new ethers.providers.JsonRpcProvider("https://polygon-testnet.public.blastapi.io")
 		const contract = fetchContract(provider);
 
 		const donations = await contract.getDonators(pId);
